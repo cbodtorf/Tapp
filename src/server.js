@@ -14,7 +14,7 @@ server.connection({
   port: 8332
 })
 
-// this registers inert with hapi
+// this registers inert + routes with hapi
 server.register([
   Inert,
   require('./routes/accounts')], (err) => {
@@ -31,9 +31,6 @@ const databaseUrl = 'tapp-db' // "username:password@example.com/mydb"
 const collections = ['accounts', 'users', 'inventory']
 server.app.db = Mongojs(databaseUrl, collections)
 
-/***********************
-*  ROUTES (extracted to separate files)
-***********************/
 
 /***********************
 *  INERT

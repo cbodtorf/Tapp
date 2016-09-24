@@ -109,7 +109,7 @@ exports.register = (server, options, next) => {
       validate: {
         payload: Joi.object({
 
-          repID: Joi.number().required(),
+          repID: Joi.number().optional(),
           accountName: Joi.string().min(10).max(50).optional(),
           contact: Joi.string().min(1).max(50).optional(),
           email: Joi.string().email().optional(),
